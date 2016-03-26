@@ -8,17 +8,18 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>LV-LV Benchmarks</title>
+    <title>LA-LV Benchmarks</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/api/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="/api/bootstrap_custom/bootstrap.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="bootstrap/docs/assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="/api/bootstrap/docs/assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/api/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -53,6 +54,7 @@
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
         
       </ol>
       <div class="carousel-inner">
@@ -60,23 +62,34 @@
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Left atrial fibrosis and scar challenge</h1>
-              <p>Six institutions from around the world participated in the ISBI 2012 challenge of segmenting 60 multi-center and multi-vendor datasets of left atrial DE-MRI. The results have been published in the <br />Journal of Cardiovascular Magnetic Resonance.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">More details</a></p>
+              <h1>Left atrial wall segmentation challenge</h1>
+              <p>An exciting challenge that will be part of this year's MICCAI 2016. The challenge will look at segmenting the atrial wall from high-resolution MRI and CT images. <br />The challenge is led by Imaging Sciences at King's College in London.</p> 
+              <p><a class="btn btn-lg btn-primary" href="/aw_pages/overview.html" role="button">More details</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Ventricle infarct segmentation challenge</h1>
-              <p>Five institutions from around the world participated in the MICCAI 2012 challenge of segmenting 30 multi-center and multi-vendor datasets of left ventricle DE-MRI. </p><p>Results are awaiting publication in a leading journal.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">More details</a></p>
+              <h1>Left atrial fibrosis and scar challenge</h1>
+              <p>Six institutions from around the world participated in the ISBI 2012 challenge of segmenting 60 multi-center and multi-vendor datasets of left atrial DE-MRI. The results have been published in <br />Journal of Cardiovascular Magnetic Resonance.</p>
+              <p><a class="btn btn-lg btn-primary" href="http://jcmr-online.biomedcentral.com/articles/10.1186/1532-429X-15-105" role="button">More details</a></p>
             </div>
           </div>
         </div>
-       
+        <div class="item">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Ventricle infarct segmentation challenge</h1>
+              <p>Five institutions from around the world participated in the MICCAI 2012 challenge of segmenting 30 multi-center and multi-vendor datasets of left ventricle DE-MRI. The results are published in <br />Medical Image Analysis</p>
+              <p><a class="btn btn-lg btn-primary" href="http://www.medicalimageanalysisjournal.com/article/S1361-8415(16)00005-0/fulltext" role="button">More details</a></p>
+            </div>
+          </div>
+        </div>
+  
+
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -92,18 +105,24 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <div class="col-md-6">
-          <img class="img-square" src="images/LV_with_scar.png" alt="left ventricle 3D render showing scar" style="width: 140px; height: 140px;">
-          <h2>Ventricle infarct algorithms</h2>
-          <p>Evaluate left ventricular myocardial infarct segmentation algorithms. Test datasets of human and porcine models can be downloaded. Following submissions, reports are generated providing algorithm performance and ranking.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-md-6">
+        <div class="col-md-4">
+          <img class="img-square" src="images/LA_with_scar.png" alt="left atrium 3D render showing scar" style="width: 140px; height: 140px;">
+          <h2>Atrial wall segmentation challenge</h2>
+          <p>Evaluate left atrial fibrosis and scar segmentation algorithms. Test datasets of human models can be downloaded. Following submissions, reports are generated providing algorithm performance and ranking</p>
+          <p><a class="btn btn-default" href="/aw_pages/wall_home.html" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
           <img class="img-square" src="images/LA_with_scar.png" alt="left atrium 3D render showing scar" style="width: 140px; height: 140px;">
           <h2>Atrial fibrosis and scar algorithms</h2>
           <p>Evaluate left atrial fibrosis and scar segmentation algorithms. Test datasets of human models can be downloaded. Following submissions, reports are generated providing algorithm performance and ranking</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
+       <div class="col-md-4">
+          <img class="img-square" src="images/LV_with_scar.png" alt="left ventricle 3D render showing scar" style="width: 140px; height: 140px;">
+          <h2>Ventricle infarct algorithms</h2>
+          <p>Evaluate left ventricular myocardial infarct segmentation algorithms. Test datasets of human and porcine models can be downloaded. Following submissions, reports are generated providing algorithm performance and ranking.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 
@@ -162,9 +181,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bootstrap/docs/assets/js/docs.min.js"></script>
+    <script src="/api/jquery/jquery.js"></script>
+    <script src="/api/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/api/bootstrap/docs/assets/js/docs.min.js"></script>
 
      <script> 
       $(function(){
