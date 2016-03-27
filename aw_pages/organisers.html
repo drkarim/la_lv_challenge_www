@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>LA Wall benchmark</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../api/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="../api/bootstrap/dist/css/bootstrap_custom.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../dashboard.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../api/bootstrap/docs/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../api/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+       <div class="container">
+            <div id="top_menu"></div>
+          </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <div id="side_menu"></div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div id="main_content"></div>
+
+            <h3 class="page-header">Organisers</h3>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="text-center">
+                  <img src="images/avatar.jpg" style="width: 200px; height: 200px;" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <a href="http://www.doc.ic.ac.uk/~rkarim/mediawiki/index.php?title=Research_Wiki"><h5>Dr. Rashed Karim</h5><h6>Research fellow, King's College London<br />Honorary lecturer, Imperial College London.</h6></a>
+                </div>
+              </div>
+               <div class="col-md-4">
+                <div class="text-center">
+                  <img src="images/kawal.png" style="width: 200px; height: 200px;" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <a href="https://kclpure.kcl.ac.uk/portal/kawal.rhode.html"><h5>Dr. Kawal Rhode</h5><h6>Reader<br />King's College London.</h6></a>
+                </div>
+              </div>
+            </div>
+
+            <hr/>
+            <h3 class="page-header">MRI leads</h3>
+             <div class="row">
+              <div class="col-md-4">
+                <div class="text-center">
+                  <img src="images/oleg.png" style="width: 200px; height: 200px;" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <a href="https://kclpure.kcl.ac.uk/portal/oleg.aslanidi.html"><h5>Dr. Oleg Aslanidi</h5><h6>Senior lecturer<br />King's College</h6></a>
+                </div>
+              </div>
+               <div class="col-md-4">
+                <div class="text-center">
+                  <img src="images/marta.png" style="width: 200px; height: 200px;" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <a href="https://kclpure.kcl.ac.uk/portal/marta.varela.html"><h5>Dr. Marta Valera</h5><h6>Research associate<br />King's College</h6></a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="text-center">
+                  <img src="images/ross.png" style="width: 200px; height: 200px;" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <a href="https://kclpure.kcl.ac.uk/portal/en/persons/ross-morgan(c5735705-64cb-463a-ace3-458491bc22c9).html"><h5>Mr. Ross Morgan</h5><h6>PhD researcher<br />King's College</h6></a>
+                </div>
+              </div>
+            </div>
+
+
+            <hr />
+            <h3 class="page-header">CT and clinical leads</h3>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="text-center">
+                  <img src="images/ronak.png" style="width: 200px; height: 200px;" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <a href="http://www.guysandstthomas.nhs.uk/our-services/consultant-profiles/cardiovascular/cardiology/ronak-rajani.aspx"><h5>Dr. Ronak Rajani</h5><h6>Consultant cardiologist, heart failure and imaging<br />St. Thomas' Hospital <br />London, UK</h6></a>
+                </div>
+              </div>
+               <div class="col-md-4">
+                <div class="text-center">
+                  <img src="images/avatar.jpg" style="width: 200px; height: 200px;" class="avatar img-circle img-thumbnail" alt="avatar">
+                  <h5>Dr. Pranav Bhagirath</h5><h6>Cardiologist<br />Haga Teaching Hospital <br/>The Hague, Netherlands</h6>
+                </div>
+              </div>
+              
+
+          </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../api/jquery/jquery.js"></script>
+    <script src="../api/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../api/bootstrap/docs/assets/js/docs.min.js"></script>
+    <script> 
+
+    /*
+    *   Load Top-menu 
+    */
+      $(function(){
+        $("#top_menu").load("../top_menu.html"); 
+      });
+
+
+    /*
+    *   Load Side-menu
+    */
+     $(function(){
+        $("#side_menu").load("sidemenu.html"); 
+      });
+
+     
+
+      
+    </script> 
+  </body>
+</html>

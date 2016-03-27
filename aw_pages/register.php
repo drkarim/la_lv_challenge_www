@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,6 +12,8 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>LA Wall benchmark</title>
+
+    <script src="../api/jquery/jquery.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="../api/bootstrap/dist/css/bootstrap_custom.css" rel="stylesheet">
@@ -23,6 +28,12 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../api/bootstrap/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- JQuery-validate script --> 
+    <script type="text/javascript" src="../api/jquery-validation/dist/jquery.validate.js"></script>
+
+    <!-- My own script -->
+    <script type="text/javascript" src="register.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -51,81 +62,102 @@
          <!-- <h2 class="page-header">Registration form</h2> -->
 
             <div class="row">
-              <div class="col-md-8">
-                <form class="form-horizontal">
+              <div class="col-md-10" id="form_content">
+                <form id="registration" name="registration" class="form-horizontal" method="post">
                   <fieldset>
 
                     <!-- Form Name -->
                     <legend>Registration form</legend>
 
+                    <p>Please fill this form to let us know that you wish to participate. If you face any issues filling the form, you may also email your details to <a href="emailto:rashed.karim@gmail.com">rashed.karim@kcl.ac.uk</a></p>
 
                     <!-- Text input first name-->
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="textinput">Title</label>  
-                      <div class="col-md-4">
-                        <input id="inputTitle" name="inputTitle" type="text" placeholder="Mr., Mrs., Dr., Prof." class="form-control input-md">
+                      <div class="col-md-6">
+                        <input id="title" name="title" type="text" placeholder="Mr., Miss, Mrs., Dr., Prof." class="form-control input-md">
                       </div>
                     </div>
 
                     <!-- Text input first name-->
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="textinput">First name</label>  
-                      <div class="col-md-4">
-                        <input id="inputFirstName" name="inputFirstName" type="text" placeholder="Enter your first name" class="form-control input-md">
+                      <div class="col-md-6">
+                        <input id="firstname" name="firstname" type="text" placeholder="Enter your first name" class="form-control input-md">
                       </div>
                     </div>
 
                     <!-- Text input last name-->
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="textinput">Last name</label>  
-                      <div class="col-md-4">
-                        <input id="inputLastName" name="inputLastName" type="text" placeholder="Enter your last name" class="form-control input-md">
+                      <div class="col-md-6">
+                        <input id="lastname" name="lastname" type="text" placeholder="Enter your last name" class="form-control input-md">
                       </div>
                     </div>
 
                     <!-- Text input institution-->
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="textinput">Institution</label>  
-                      <div class="col-md-4">
-                        <input id="inputInstitution" name="inputInstitution" type="text" placeholder="Enter your institution" class="form-control input-md col-xs-3">
+                      <div class="col-md-6">
+                        <input id="institution" name="institution" type="text" placeholder="Enter your institution" class="form-control input-md col-xs-3">
                       </div>
                     </div>
 
                     <!-- Textarea -->
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="textarea">Address</label>
-                      <div class="col-md-4">                     
-                        <textarea class="form-control" id="textarea" placeholder="Enter your address" name="textarea"></textarea>
+                      <div class="col-md-6">                     
+                        <textarea class="form-control" id="address" placeholder="Enter your address" name="address"></textarea>
                       </div>
                     </div>
 
                     <!-- Text input email-->
                     <div class="form-group">
                       <label class="col-md-4 control-label" for="textinput">Email</label>  
-                      <div class="col-md-4">
-                        <input id="inputEmail" name="inputEmail" type="text" placeholder="Enter your email" class="form-control input-md">
+                      <div class="col-md-6">
+                        <input id="email" name="email" type="text" placeholder="Enter your email" class="form-control input-md">
                       </div>
                     </div>
-
+<!--
                     <div class="form-group">
                     <label class="col-md-4 control-label" for="document">Agreement</label>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                               
                               <span class="btn btn-success fileinput-button">
                                   <i class="glyphicon glyphicon-plus"></i>
                                   <span>Select file...</span>
-                                  <!-- The file input field used as target for the file upload widget -->
-                                  <input id="fileupload" class="fileupload" type="file" name="file" />
+                                  
+                                  <input id="agreement" class="fileupload" type="file" name="agreement" />
                               </span>
-                              <!-- The container for the uploaded files -->
+                              
                             </div>
+                    </div>
+-->                    
+                    <hr />
+                    <div class="form-group">
+                      <div class="col-md-4"></div>
+                      <!-- Taken from example in https://www.phpcaptcha.org/documentation/quickstart-guide/  -->
+                      <div class="col-md-6"><img id="captcha" src="../api/securimage/securimage_show.php?namespace=captcha" alt="CAPTCHA Image" />
+                        <a style="border: 0" href="#" title="Refresh Image" onclick="document.getElementById('captcha').src = '../api/securimage/securimage_show.php?' + Math.random(); this.blur(); return false"><img height="32" width="32" src="../api/securimage/images/refresh.png" alt="Refresh Image" onclick="this.blur()" style="border: 0px; vertical-align: bottom">
+                        
+                      </a>
+                      </div>
+                    </div>
+                    <div id="captchaInputDIV" class="form-group">
+                       <label class="col-md-4 control-label" for="document">Are you a human?</label>
+                      <div class="col-md-4">
+                        <input id="captchaInput" name="captchaInput" type="text" placeholder="Type the text above" class="form-control input-md">
+
+                      </div>
+
                     </div>
 
                     <div class="form-group">
                       <div class="col-md-4"></div>
-                      <div class="col-md-4">
-                        
+                      <div class="col-md-2">
                         <button type="submit" class="btn btn-primary btn-default">Submit form</button>
+                      </div>
+                      <div class="col-md-4" id="form_process_error" class="">
                       </div>
                     </div>
 
@@ -143,10 +175,12 @@
  <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../api/jquery/jquery.js"></script>
+  
     <script src="../api/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../api/bootstrap/docs/assets/js/docs.min.js"></script>
     <script> 
+
+    
 
     /*
     *   Load Top-menu 
@@ -163,7 +197,66 @@
         $("#side_menu").load("sidemenu.html"); 
       });
 
+    $.validator.setDefaults( {
+      
+      submitHandler: function () {
+        registration_handler();
+      }
+    
+    });
      
+     $( document ).ready( function () {
+
+       /*
+       *  JQuery form validation 
+       */
+       $("#registration").validate( {
+
+          rules: {
+            title: "required",
+            firstname: "required",
+            lastname: "required",
+            institution: "required", 
+            address: "required", 
+            email: { "required" : true , "email" : true }, 
+            captchaInput: "required", 
+            /*agreement: {
+              required: true, 
+              accept: "application/pdf"
+            },*/
+
+            messages : {
+              firstname: "Please enter your first name", 
+              lastname: "Please enter your last name", 
+              institution: "Please enter your institution", 
+              email: "Please enter a valid email address",
+              address: "Please enter an address", 
+              captchaInput: "Please enter the text you see in the shown image"
+            },
+            errorElement: "em",
+            errorPlacement: function ( error, element ) {
+            // Add the `help-block` class to the error element
+            error.addClass( "help-block" );
+              if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+              } else {
+                error.insertAfter( element );
+              }
+            },
+            highlight: function ( element, errorClass, validClass ) {
+              $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+            },
+            unhighlight: function (element, errorClass, validClass) {
+              $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+            },
+
+
+
+      }});
+  
+
+    });     // document ready 
+
 
       
     </script> 
