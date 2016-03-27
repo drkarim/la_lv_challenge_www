@@ -1,1 +1,3 @@
 /api/vendor
+/api/kcl/mailgun_key.txt
+/api/kcl/mailgun_domain.txt
